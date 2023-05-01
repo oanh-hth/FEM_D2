@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+:root {
+    --color-red: hsl(0, 78%, 62%);
+    --color-cyan: hsl(180, 62%, 55%);
+    --color-orange: hsl(34, 97%, 64%);
+    --color-blue: hsl(212, 86%, 64%);
+    --color-dark-blue: hsl(234, 12%, 34%);
+    --color-grayish-blue: hsl(229, 6%, 66%);
+    --color-gray: hsl(0, 0%, 98%);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+p, h1, h2 {
+    overflow-wrap: break-word;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 400;
+    color: var(--color-grayish-blue);
+    background-color: var(--color-gray);
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+}   
+
+h1 {
+    font-size: clamp(1.5rem, 4vw + 0.25rem, 2.25rem);
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 1.25rem;
+}
+
+h1, h2 {
+    font-weight: 600;
+    color: var(--color-dark-blue);
+}
+
+h1 span {
+    font-weight: 200;
+    display: block;
+}
+
+h1 + p {
+    font-size: 0.9375rem;
+}
+
+h1, h1 + p {
+    text-align: center;
+}
+
+h2 + p {
+    font-size: 0.8125rem;
+    font-weight: 400;
+    line-height: 1.77;
+    margin-bottom: clamp(2.0625rem, 4vw + 0.25rem ,2.5rem);
+}
+
+main {
+    padding-block: 5.3125rem 4.875rem;
+}
+
+main > article:first-child {
+    width: min(calc(100vw - 4rem), 1110px);
+}
+
+div {
+    display: grid;
+    gap: clamp(1.5625rem, 3vw + 0.25rem, 2.1875rem);
+    margin-top: clamp(4rem, -4vw + 6rem, 4.75rem);
+    grid-template-areas: 
+    "one"
+    "two"
+    "three"
+    "four";
+}
+
+div > article {
+    padding: 1.75rem;
+    border-radius: 8px;
+    box-shadow: 0px 15px 30px -11px rgba(131, 166, 210, 0.5);
+    border-top: 3.55px solid;
+}
+
+div > article:nth-of-type(1) {
+    border-top-color: var(--color-cyan);
+    grid-area: one;
+    align-self: center;
+}
+
+div > article:nth-of-type(2) {
+    border-top-color: var(--color-red);
+    grid-area: two;
+}
+
+div > article:nth-of-type(3) {
+    border-top-color: var(--color-orange);
+    grid-area: three;
+}
+
+div > article:nth-of-type(4) {
+    border-top-color: var(--color-blue);
+    grid-area: four;
+    align-self: center;
+}
+
+img {
+    display: flex;
+    max-width: 100%;
+    margin-left: auto;
+}
+
+@media screen and (min-width: 800px) {
+    div {
+        grid-template-areas: 
+        "one two four"
+        "one three four";
+    }
+}
